@@ -1,0 +1,16 @@
+{
+  "name": "back",
+  "version": "0.1.0",
+  "scripts": {
+    "postinstall:hello-world": "cd hello-world && npm install",
+    "postinstall:cod-api": "cd cod-api && npm install",
+    "postinstall": "concurrently npm:postinstall:*",
+    "serve": "sam local start-api --env-vars environments.json",
+    "test:hello-world": "cd hello-world && npm run test",
+    "test:cod-api": "cd cod-api && npm run test",
+    "test": "concurrently npm:test:*"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  }
+}
